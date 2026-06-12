@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1130</width>
+    <height>878</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {
+    background-color: #2b2b2b;
+}
+
+QLabel {
+    color: white;
+}
+
+QComboBox {
+    background-color: #3c3f41;
+    color: white;
+    border: 1px solid #555;
+    padding: 4px;
+}
+
+QTextEdit {
+    background-color: #1e1e1e;
+    color: white;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>120</y>
+      <width>300</width>
+      <height>650</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>250</width>
+      <height>650</height>
+     </size>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QWidget" name="">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>258</width>
+       <height>349</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QComboBox" name="projectDropdown">
+        <item>
+         <property name="text">
+          <string>Bottle Label Detector</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Obejct Counter</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>QR Template Matcher</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>GlobalT emplate Matcher</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Text Detector</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <property name="spacing">
+         <number>20</number>
+        </property>
+        <item>
+         <widget class="QPushButton" name="runButton">
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+QPushButton:hover {
+    background-color: #45a049;
+}</string>
+          </property>
+          <property name="text">
+           <string>Run Project</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="stopButton">
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #f44336;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+QPushButton:hover {
+    background-color: #d32f2f;
+}
+</string>
+          </property>
+          <property name="text">
+           <string>Stop Project</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QLabel" name="statusLabel">
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    color: #00E676;
+    font-size: 10pt;
+    font-weight: bold;
+    font-family: Consolas;
+}</string>
+        </property>
+        <property name="text">
+         <string>Status : Ready</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="captureButton">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #FF6D00;
+    color: white;
+    border: 2px solid #FF9100;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #FF9100;
+}</string>
+        </property>
+        <property name="text">
+         <string>Capture Text</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="teachButton">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #2962FF;
+    color: white;
+    border: 2px solid #448AFF;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #448AFF;
+}</string>
+        </property>
+        <property name="text">
+         <string>Teach Pattern</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="outputConsoleLabel">
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    color: #39FF14;
+    font-size: 12pt;
+    font-weight: bold;
+    font-family: Consolas;
+}</string>
+        </property>
+        <property name="text">
+         <string>Output Console</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTextEdit" name="outputWindow">
+        <property name="styleSheet">
+         <string notr="true">QTextEdit {
+    background-color: black;
+    color: #39FF14;
+    border: 2px solid #39FF14;
+    font-family: Consolas;
+    font-size: 11pt;
+}</string>
+        </property>
+        <property name="placeholderText">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="cameraFrame">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>120</y>
+      <width>741</width>
+      <height>651</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="cameraFeedTitle">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>711</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+    color: #39FF14;
+    font-size: 12pt;
+    font-weight: bold;
+    font-family: Consolas;
+}</string>
+     </property>
+     <property name="text">
+      <string>Camera Feed</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="cameraDisplayLabel">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>60</y>
+       <width>700</width>
+       <height>461</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>700</width>
+       <height>400</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+    background-color: black;
+    color: #39FF14;
+    border: 2px solid #39FF14;
+    font-size: 14px;
+    font-weight: bold;
+}</string>
+     </property>
+     <property name="text">
+      <string>Camera Not Started</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>570</y>
+       <width>165</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QPushButton" name="startCameraButton">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #00C853;
+    color: white;
+    border: 2px solid #00E676;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #00E676;
+}</string>
+        </property>
+        <property name="text">
+         <string>Start Camera</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="stopCameraButton">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #D50000;
+    color: white;
+    border: 2px solid #FF1744;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #FF1744;
+}</string>
+        </property>
+        <property name="text">
+         <string>Stop Camera</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="dashboardLabel">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>40</y>
+      <width>301</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+    color: #39FF14;
+    font-size: 18pt;
+    font-weight: bold;
+    font-family: Consolas;
+}</string>
+    </property>
+    <property name="text">
+     <string>OpenCV Vision Dashboard</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1130</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
